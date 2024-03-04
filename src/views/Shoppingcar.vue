@@ -1,9 +1,11 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
+import CarCard from '@/components/CarCard.vue'
+import LinkBtn from '@/components/LinkBtn.vue'
 export default{
-  // components:{
-  //   Keyword,
-  // },
+  components:{
+    CarCard,LinkBtn,
+  },
 
   data(){
     return{
@@ -26,7 +28,8 @@ export default{
       <span class="w-1/12 break-keep pl-2">價錢</span>
       <span class="w-4/12"></span>
     </div>
-    <ul class="goods">
+    <CarCard></CarCard>
+    <!-- <ul class="goods">
       <li class="checkbox">
         <input type="checkbox" class="sm:w-5 sm:h-5">
       </li>
@@ -44,27 +47,20 @@ export default{
         <input type="number" class="goods-input" min="1" value="1">
         <span class="plus">&plus;</span>
       </li>
-    </ul>
+    </ul> -->
     <div class="calc">
       <span>商品數量：<span>0</span></span>
       <span>商品總金額：$<span>0</span></span>
     </div>
     <div class="action">
-      <RouterLink to="/">
-        <button type="button" class="back">回上頁繼續購買</button>
-      </RouterLink>
-      <RouterLink to="/shoppingcheck">
-        <button type="button" class="confirm">確認購買</button>
-      </RouterLink>
+      <LinkBtn :style="'back'">回上頁繼續購買</LinkBtn>
+      <LinkBtn :style="'confirm'" :link="'/shoppingcheck'" >確認購買</LinkBtn>
     </div>
   </main>
 </template>
 
 <style scoped>
-/* 共用樣式 */
-.goods-img{
-  @apply min-w-[80px] w-3/12 select-none
-}
+
 /* 主要樣式 */
 .main{
   @apply w-full px-0 md:px-5
@@ -72,7 +68,7 @@ export default{
 .goods-nav{
   @apply flex w-full border-y-2 py-3 border-gray-300 font-medium
 }
-.goods{
+/* .goods{
   @apply flex w-full border-b-2 py-5 border-gray-300 items-center
 }
 .checkbox{
@@ -98,17 +94,11 @@ export default{
 }
 .goods-input{
   @apply min-w-[50px] w-4/6 sm:w-3/6 border-y border-gray-300  pb-1 pl-1 text-center text-base md:text-lg md:w-2/6
-}
+} */
 .calc{
   @apply flex flex-col w-full mt-8 items-end text-xl md:text-2xl font-medium
 }
 .action{
   @apply flex w-full justify-between text-white mt-3
-}
-.back{
-  @apply bg-yellow-800 rounded-md px-4 py-2 hover:opacity-90
-}
-.confirm{
-  @apply bg-sky-900 rounded-md px-4 py-2 hover:opacity-90
 }
 </style>

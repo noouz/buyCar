@@ -1,45 +1,23 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
+import LinkBtn from '@/components/LinkBtn.vue';
+import CheckCard from '@/components/CheckCard.vue';
 export default{
-  // components:{
-  //   Keyword,
-  // },
-
+  components:{
+    LinkBtn,CheckCard,
+  },
   data(){
     return{
-      // origin:true,
     }
   },
 
-  // methods:{
-  // },
 }
 </script>
 
 <template>
   <h1 class=" text-black text-3xl font-bold mb-5">購買確認及填寫資訊</h1>
   <main class="main">
-    <div class="goods-nav">
-      <span class="min-w-[80px] w-4/12 text-center break-keep">商品圖片</span>
-      <span class="w-4/12 break-keep pl-0 md:pl-8">商品名稱</span>
-      <span class="w-2/12 break-keep">價錢</span>
-      <span class="w-2/12">數量</span>
-    </div>
-    <ul class="goods">
-      <li class="goods-img-area">
-        <img src="https://placehold.jp/300x300.png" alt="商品圖片" class="goods-img">
-      </li>
-      <li class="goods-title">
-        <h3>Ronstring</h3>
-      </li>
-      <li class="goods-price">
-        <span>$670</span>
-      </li>
-      <li class="goods-count">
-        <span>1</span>
-      </li>
-    </ul>
-
+    <CheckCard />
 
     <form class="mt-6">
       <label for="name">
@@ -85,21 +63,14 @@ export default{
       <span>商品總金額：$<span>0</span></span>
     </div>
     <div class="action">
-      <RouterLink to="/shoppingcar">
-        <button type="button" class="back">回上頁繼續加購</button>
-      </RouterLink>
-      <RouterLink to="/buysuccess">
-        <button type="button" class="confirm">確認送出</button>
-      </RouterLink>
+      <LinkBtn :style="'back'" :link="'/shoppingcar'">回上頁繼續加購</LinkBtn>
+      <LinkBtn :style="'confirm'" :link="'/buysuccess'" >確認送出</LinkBtn>
     </div>
   </main>
 </template>
 
 <style scoped>
 /* 共用樣式 */
-.goods-img{
-  @apply min-w-[80px] w-4/12
-}
 label{
   @apply font-medium text-lg w-full
 }
@@ -119,24 +90,6 @@ input[type="radio"]{
 .main{
   @apply w-full px-0 md:px-10 mb-8 
 }
-.goods-nav{
-  @apply flex w-full border-y-2 py-3 border-gray-300 font-medium
-}
-.goods{
-  @apply flex w-full border-b-2 py-5 border-gray-300 items-center
-}
-.goods-img-area{
-  @apply w-4/12 flex justify-center
-}
-.goods-title{
-  @apply w-4/12 pl-0 md:pl-8 break-words md:break-keep 
-}
-.goods-price{
-  @apply w-2/12
-}
-.goods-count{
-  @apply w-2/12 pl-3
-}
 form{
   @apply w-full
 }
@@ -148,12 +101,6 @@ form{
 }
 .action{
   @apply flex w-full justify-between text-white mt-3
-}
-.back{
-  @apply bg-yellow-800 rounded-md px-4 py-2 hover:opacity-90
-}
-.confirm{
-  @apply bg-sky-900 rounded-md px-4 py-2 hover:opacity-90
 }
 
 </style>
