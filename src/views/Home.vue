@@ -12,7 +12,6 @@ export default{
       origin:true,
     }
   },
-
 }
 </script>
 
@@ -25,9 +24,7 @@ export default{
     <img src="@/assets/icon/list-two-active.png" alt="清單排列" class="list-img" @click="origin=false" v-else>
   </div>
   <main class="main">
-    <OriginCard v-if="origin"></OriginCard>
-    <!-- 清單顯示 -->
-    <ListCard v-else></ListCard>
+    <OriginCard :cardType="origin"></OriginCard>
     
   </main>
 </template>
