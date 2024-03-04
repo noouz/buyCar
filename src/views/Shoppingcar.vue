@@ -91,10 +91,10 @@ export default{
   @apply w-3/12 flex flex-nowrap justify-center ml-6 md:ml-0
 }
 .minus{
-  @apply bg-white cursor-pointer border border-gray-300 rounded-l-lg flex justify-center pb-1 text-xl w-1/6 px-2 sm:px-0
+  @apply bg-white cursor-pointer border border-gray-300 rounded-l-lg flex justify-center pb-1 text-xl w-1/6 px-2 sm:px-0 hover:bg-slate-200
 }
 .plus{
-  @apply bg-white cursor-pointer border border-gray-300 rounded-r-lg flex justify-center pb-1 text-xl w-1/6 px-2 sm:px-0
+  @apply bg-white cursor-pointer border border-gray-300 rounded-r-lg flex justify-center pb-1 text-xl w-1/6 px-2 sm:px-0 hover:bg-slate-200
 }
 .goods-input{
   @apply min-w-[50px] w-4/6 sm:w-3/6 border-y border-gray-300  pb-1 pl-1 text-center text-base md:text-lg md:w-2/6
