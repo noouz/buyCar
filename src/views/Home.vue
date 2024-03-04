@@ -1,11 +1,9 @@
 <script>
 import OriginCard from '@/components/OriginCard.vue';
-import ListCard from '@/components/ListCard.vue';
 
 export default{
   components:{
     OriginCard,
-    ListCard,
   },
   data(){
     return{
@@ -33,13 +31,6 @@ export default{
 /* 全局樣式 */
 *::before,*::after{
   @apply box-border 
-}
-ul,li{
-  @apply list-none
-}
-/* 共用樣式 */
-.title-set{
-  @apply text-center break-keep
 }
 /* 主要樣式 */
 .list-img{

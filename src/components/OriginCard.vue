@@ -78,6 +78,14 @@ export default{
 </template>
 
 <style scoped>
+/* 共用樣式 */
+.title-set{
+  @apply text-center break-keep
+}
+ul,li{
+  @apply list-none
+}
+
 .goods{
   @apply flex flex-wrap w-full justify-around xl:justify-center gap-y-8 gap-x-2 xl:gap-x-5 
 }
