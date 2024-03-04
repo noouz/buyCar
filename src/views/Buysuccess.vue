@@ -46,7 +46,7 @@ export default{
       <span class="w-3/12 ">地址</span>
       <span class="w-2/12">付款方式</span>
       <span class="w-2/12">電子信箱</span>
-      <span class="w-1/12">運送方式</span>
+      <span class="w-1/12 break-keep">運送方式</span>
     </div>
     <ul class="customer">
       <li class="w-1/12 break-words">Wilson</li>
