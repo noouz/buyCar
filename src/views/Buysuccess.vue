@@ -65,7 +65,7 @@ export default{
 <style scoped>
 /* 共用樣式 */
 .goods-img{
-  @apply min-w-[80px] w-4/12
+  @apply min-w-[80px] w-4/12 select-none
 }
 .customer>li{
   @apply py-5 
