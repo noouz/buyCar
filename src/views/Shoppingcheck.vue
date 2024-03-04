@@ -2,14 +2,26 @@
 import { RouterLink, RouterView } from 'vue-router';
 import LinkBtn from '@/components/LinkBtn.vue';
 import CheckCard from '@/components/CheckCard.vue';
+import Label from '@/components/Label.vue';
 export default{
   components:{
-    LinkBtn,CheckCard,
+    LinkBtn,CheckCard,Label,
   },
   data(){
     return{
+      formData:{
+        name:'Stanley',
+        phone:'09123456789',
+        address:'台中市',
+        email:'qa@gmail.com',
+      }
     }
   },
+  // methods:{
+    // updateNew(){
+    //   this.formData.name = value,
+    // }
+  // }
 
 }
 </script>
@@ -20,7 +32,11 @@ export default{
     <CheckCard />
 
     <form class="mt-6">
-      <label for="name">
+      <Label :content="'姓名'" :type="'text'" required :value-data="formData.name" @update="(value) => formData.name = value" ></Label>
+      <Label :content="'電話'" :type="'tel'" required :value-data="formData.phone" @update="(value) => formData.phone = value"></Label>
+      <Label :content="'地址'" :type="'text'" required :value-data="formData.address" @update="(value) => formData.adress = value"></Label>
+      <Label :content="'電子信箱'" :type="'email'" required :value-data="formData.email" @update="(value) => formData.email = value"></Label>
+      <!-- <label for="name">
         <span>姓名</span>
         <input type="text" name="name" id="name" required>
       </label>
@@ -35,7 +51,7 @@ export default{
       <label for="email">
         <span>電子信箱</span>
         <input type="email" name="email" id="email" required>
-      </label>
+      </label> -->
 
       
       <label for="payment" class="inp-title">
@@ -71,18 +87,14 @@ export default{
 
 <style scoped>
 /* 共用樣式 */
-label{
-  @apply font-medium text-lg w-full
-}
+
 .choice{
   @apply font-normal text-base min-w-[100px] w-[120px]
 }
 .inp-title{
   @apply text-lg flex flex-wrap mb-2 mt-3
 }
-input{
-  @apply w-full border border-gray-300 pl-2 text-lg py-1 rounded-md my-3 focus:outline-gray-500 active:outline-gray-500
-}
+
 input[type="radio"]{
   @apply w-auto m-2
 }
