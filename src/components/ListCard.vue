@@ -10,6 +10,7 @@ export default{
     },
     computed:{
         ...mapState(useShoppingCart,['cartData']),
+        ...mapState(useShoppingCart,['goodsData']),
         ...mapState(useShoppingCart,['cartAmount']),
     },
     data(){
@@ -17,10 +18,12 @@ export default{
             goodsArr:[],
         }
     },
+    // data無法在githubpage取得(待處理)
     mounted(){
-        fetch('https://raw.githubusercontent.com/noouz/aitools-json/main/carData.json')
-        .then( res => res.json())
-        .then(datas => this.goodsArr = datas);
+        // fetch('https://raw.githubusercontent.com/noouz/aitools-json/main/carData.json')
+        // .then( res => res.json())
+        // .then(datas => this.goodsArr = datas);
+        this.goodsArr = this.goodsData;
     },
     methods:{
         ...mapActions(useShoppingCart,['goodsPlus']),
