@@ -18,7 +18,7 @@ export default{
         }
     },
     mounted(){
-        fetch('/products.json')
+        fetch('src/json/products.json')
         .then( res => res.json())
         .then(datas => this.goodsArr = datas);
     },
