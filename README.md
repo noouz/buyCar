@@ -1,4 +1,4 @@
-預覽：
+預覽： https://noouz.github.io/buyCar
 
 # vue-project
 
