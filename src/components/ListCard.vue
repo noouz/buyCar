@@ -18,7 +18,7 @@ export default{
         }
     },
     mounted(){
-        fetch('src/json/products.json')
+        fetch('https://raw.githubusercontent.com/noouz/aitools-json/main/carData.json')
         .then( res => res.json())
         .then(datas => this.goodsArr = datas);
     },
